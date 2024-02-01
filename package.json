@@ -1,0 +1,25 @@
+{
+  "name": "demo-saucedemo-automation",
+  "version": "1.0.0",
+  "description": "Successful checkout automation of saucedemo with allure reports integration",
+  "main": "index.js",
+  "scripts": {
+    "test:checkout": "cypress run -b chrome --spec **/checkout/** --env allure=true  --reporter mocha-allure-reporter",
+    "cy:run": "cypress run --env allure=true --reporter mocha-allure-reporter",
+    "allure:report": "allure generate --clean -o allure-report",
+    "tests": "npm run cy:run && npm run aftertest",
+    "aftertest": "npm run allure:report"
+  },
+  "keywords": [],
+  "author": "Colleen Villon",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.1",
+    "allure-commandline": "^2.26.0",
+    "cypress": "^13.6.4"
+  },
+  "dependencies": {
+    "mocha-allure-reporter": "^1.4.0",
+    "save-dev": "^0.0.1-security"
+  }
+}

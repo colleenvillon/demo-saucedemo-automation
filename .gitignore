@@ -1,0 +1,9 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore package-lock.json
+package-lock.json
+
+# Ignore Allure report and results folders
+allure-report/
+allure-results/
